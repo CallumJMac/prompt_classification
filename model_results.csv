@@ -1,6 +1,6 @@
 Classifier,Accuracy,Precision,Recall,F1 Score,Training Time (s),Inference Time (s)
-K-Nearest Neighbors,0.66,0.79,0.68,0.63,0.04,0.04
-Support Vector Machine,0.77,0.84,0.78,0.76,0.20,0.01
-Logistic Regression,0.78,0.83,0.79,0.78,0.02,0.00
-Gradient Boosting Classifier,0.79,0.85,0.80,0.79,0.67,0.02
-Random Forest,0.87,0.89,0.88,0.87,0.45,0.02
+K-Nearest Neighbors,0.66,0.79,0.68,0.63,0.03,0.02
+Support Vector Machine,0.77,0.84,0.78,0.76,0.15,0.00
+Logistic Regression,0.78,0.83,0.79,0.78,0.03,0.01
+Gradient Boosting Classifier,0.80,0.85,0.81,0.80,0.54,0.00
+Random Forest,0.87,0.89,0.88,0.87,0.39,0.01

@@ -9,29 +9,35 @@ from sklearn import svm
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import GradientBoostingClassifier
 
-# Import Advai's Prompt Classification Modules
+# Import Prompt Classification Modules
 from promptify.model import PromptClassifier
-from promptify.data_loader import PromptDataLoader
 
 def main():
-    # Define the relative path to the data
-    DATA_PATH = "data/coding_challenge_data.csv"
 
-    # Instatiate PromptDataLoader object
-    dataloader = PromptDataLoader(DATA_PATH)
+    # Initialize data set location and file name
+    data_file_path = "data_new/"
+    data_file_name_train = "train-00000-of-00001-9564e8b05b4757ab"
+    data_file_name_test = "test-00000-of-00001-701d16158af87368"
+    data_file_ext = ".parquet"
 
-    # Loads the data from the data path
-    dataloader.load_data()
+    # Loading data set into a pandas DataFrame
+    data_train = pd.read_parquet(data_file_path + data_file_name_train + data_file_ext)
+    data_test = pd.read_parquet(data_file_path + data_file_name_test + data_file_ext)
 
-    # Display the value counts of each class
-    print(dataloader.df['persona'].value_counts())
+    # Rename "text" column into "prompt"
+    data_train.rename(columns={"text":"prompt"}, inplace=True)
+    data_test.rename(columns={"text":"prompt"}, inplace=True)
+
+    # Split DataFrame into prompts and labels
+    x_train = data_train['prompt']
+    y_train = data_train['label']
+    x_test = data_test['prompt']
+    y_test = data_test['label']
 
 
-    # Plot the value counts to visualise potential class imbalance
-    sns.countplot(x='persona',data=dataloader.df)
-
-    #  Split Data
-    x_train, x_test, y_train, y_test = dataloader.train_test_split()
+    # Check number of training and testing samples
+    print(f"# of Training Samples: {len(x_train)}")
+    print(f"# of Testing Samples: {len(x_test)}")
 
     # Model Training
     # Initialize estimators using their default parameters
