@@ -1,4 +1,4 @@
-# Advai Coding Challenge Instructions: LLM Prompt Evaluation Challenge
+# LLM Prompt Evaluation Challenge
 
 The name of the solution provided is **promptify**.
 
