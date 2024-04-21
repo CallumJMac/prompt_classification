@@ -10,6 +10,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import GradientBoostingClassifier
 
 # Import Prompt Classification Modules
+# import sys
+# sys.path.insert(1, '/path/to/application/app/folder')
 from promptify.model import PromptClassifier
 
 def main():

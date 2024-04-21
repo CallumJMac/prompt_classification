@@ -12,15 +12,8 @@ class TextClassifierApp:
         
     def run(self):
         # Define layout and UI components
-        # Create two columns
-        col1, col2 = st.columns([0.5, 5])
-        # In the first column, display the image
-        with col1:
-            st.image("promptify/static/images/bluelogo.png")
-
-        # In the second column, display the title
-        with col2:
-            st.title("Advai Promptify App")
+        
+        st.title("Promptify App")
 
         menu = ["Home"]
         choice = st.sidebar.selectbox("Menu", menu)

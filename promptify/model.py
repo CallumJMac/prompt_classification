@@ -59,6 +59,9 @@ class PromptClassifier:
     
         # Record the start time for training
         start_time = time.time()
+
+        # Preprocess text
+        x_train = x_train.apply(self.preprocess)
         
         # Fit the model
         self.pipeline.fit(x_train, y_train)
